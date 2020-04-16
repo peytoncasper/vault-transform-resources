@@ -24,7 +24,7 @@ NAME=$3
 TEMPLATE_ALPHABET=$4
 
 if [ $TYPE == "alphabet" ]; then
-    vault write transform/alphabet/one-to-nine-numeric alphabet="$(cat $PATH_TO_LOAD)"
+    vault write transform/alphabet/$NAME alphabet="$(cat $PATH_TO_LOAD)"
 elif [ $TYPE == "template" ]; then
     vault write transform/template/$NAME \
         type=regex \
